@@ -1,0 +1,104 @@
+{
+    "expName": {"default": "TraValTes",
+                "choices": ["generateData", "TraValTes", "optuna",
+                "plotDistribution", "plotHeatmap"]},
+
+    "dataName": {"default": "Liu2022Developmental_Human_exon_YN_ctcca",
+                 "choices": ["Lin2022Evaluation_Hsapiens",
+                             "Lin2022Evaluation_Mmusculus",
+                             "Lin2022Evaluation_Scerevisiae",
+                             "Lin2022Evaluation_Athaliana",
+                             "Lv2020Evaluation_Athaliana",
+                             
+                             "Liu2022Developmental_Human_exon",
+                             "Liu2022Developmental_Human_exon_Y_ctcca",
+                             "Liu2022Developmental_Human_exon_N_ctcca",
+                             "Liu2022Developmental_Human_exon_YN_ctcca",
+                             
+                             "Liu2022Developmental_Human_transcript",
+                             "Liu2022Developmental_Human_transcript_Y_ctcca",
+                             "Liu2022Developmental_Human_transcript_N_ctcca",
+                             "Liu2022Developmental_Human_transcript_YN_ctcca",
+                             
+                             "Liu2022Developmental_Mouse_exon",
+                             "Liu2022Developmental_Mouse_exon_Y_ctcca",
+                             "Liu2022Developmental_Mouse_exon_N_ctcca",
+                             "Liu2022Developmental_Mouse_exon_YN_ctcca",
+                             
+                             "Liu2022Developmental_Mouse_transcript",
+                             "Liu2022Developmental_Mouse_transcript_Y_ctcca",
+                             "Liu2022Developmental_Mouse_transcript_N_ctcca",
+                             "Liu2022Developmental_Mouse_transcript_YN_ctcca",
+
+                             "Liu2022Developmental_Human_exon_all",
+                             "Liu2022Developmental_Human_exon_ctcca",
+                             "Liu2022Developmental_Human_transcript_all",
+                             "Liu2022Developmental_Human_transcript_ctcca",
+
+                             "Liu2022Developmental_Mouse_exon_all",
+                             "Liu2022Developmental_Mouse_exon_ctcca",
+                             "Liu2022Developmental_Mouse_transcript_all",
+                             "Liu2022Developmental_Mouse_transcript_ctcca",
+
+                             "Chen2020m5CPredSVM_A",
+                             "Chen2020m5CPredSVM_H",
+                             "Chen2020m5CPredSVM_M",
+
+                             "Zhang2020iPromoter_5mC",
+
+                             "iRNAm5CAthaliana", "homo", "A549",
+                             "CD8T", "HEK293_abacm",
+                             "HEK293_sysy", "HeLa", "MOLM13"]},
+    "modelName": {"default": "Transformer",
+                  "choices": ["GRU", "Transformer",
+                              "NB", "LR", "SVM", "RF", "Ada", "XGB", "MLP",
+                              "Jia_DGA_5mC"]},
+
+    "featureType": {"default": "one_hot",
+                    "choices": ["kmer_1", "kmer_2", "kmer_3", "kmer_4",
+                                "mismatch_3_1", "mismatch_4_1",
+                                "revckmer_1", "revckmer_2", "revckmer_3", "revckmer_4",
+                                "PC_PseDNC_General", "PC_PseTNC_General",
+                                "SC_PseDNC_General", "SC_PseTNC_General",
+                                "one_hot"]},
+    "sampleLen": {"default": 41},
+    "num_k": {"default": 6},
+
+    "num_layers": {"default": 1},
+    "hidDim": {"default": 32},
+    "num_linear": {"default": 2},
+    "lr": {"default": 0.001},
+    "weight_decay": {"default": 0.0001},
+    "dropProb": {"default": 0.4},
+    "n_heads": {"default": 2},
+    "d_ff": {"default": 4},
+    "norm": {"default": "BatchNorm",
+             "choices": ["BatchNorm", "LayerNorm", "None"]},
+    "embedType": {"default": "init_freeze",
+                  "choices": ["init_dynamic", "init_freeze"]},
+
+    "embeddingDim": {"default": 100},
+
+    "bidirectional": {"default": 1,
+                      "choices": [0, 1]},
+
+    "epochs": {"default": 2},
+    "outputSize": {"default": 1},
+    "earlyFlag": {"default": 1,
+                  "choices": [0, 1]},
+    "patience": {"default": 30},
+    "batchSize": {"default": 128},
+    "interval": {"default": 1},
+    "bestEpoch": {"default": -1},
+
+    "traRatio": {"default": 0.7},
+    "valRatio": {"default": 0.1},
+    "tesRatio": {"default": 0.2},
+
+    "dev": {"default": "cuda:1",
+            "choices": ["cpu", "cuda:0", "cuda:1", "cuda:2", "cuda:3"]},
+    "seed": {"default": 10},
+    "expKey": {"default": "debug"},
+    "n_trials": {"default": 2}
+
+}
